@@ -97,7 +97,7 @@
 &caps_tapdance   &kp SQT           &kp MINUS         &kp COMMA             &kp PERIOD                  &kp FSLH                              &kp J                &kp M                        &kp G                  &kp B                  &kp V              &kp RSHFT
 &trans           &kp GRAVE         &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &control_ncpaste                                                                       &trans                       &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp BACKSLASH      &trans
                                                                            &kp ESCAPE                  &kp BACKSPACE  &lower_hold_tap 5 5    &lower_hold_tap 5 5  &kp DEL                      &kp ENTER
-                                                                           &kp SPACE                   &kp TAB        &to 1                  &to 1                &kp BACKSPACE                &kp R
+                                                                           &kp SPACE                   &kp TAB        &to 1                  &to 1                &kp BACKSPACE                &kp A
             >;
 
             label = "Base Layer";
@@ -180,10 +180,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
