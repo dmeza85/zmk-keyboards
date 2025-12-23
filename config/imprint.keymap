@@ -1,0 +1,189 @@
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
+
+/ {
+    chosen { zmk,matrix-transform = &imprint_function_row_full_bottom_row; };
+
+    behaviors {
+        hrow: hrow {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HROW";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            hold-trigger-key-positions = <40 39 38 37 43 44 45 46 13 14 15 16 25 26 27 28 17 29 41 49 50 51 52 61 62 63 53 81 19 20 21 22 31 32 33 34 43 44 45 46 55 56 57 58 66 67 68 36 47 18 30 42 54 70 71 74 80 77 76 75 0 1 2 3 4 5 6 7 8 9 10 11 23 35 59 65 64 48 24 12>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+        };
+
+        caps_tapdance: caps_tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CAPS_TAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&caps_word>, <&kp CAPSLOCK>;
+        };
+
+        lower_hold_tap: lower_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LOWER_HOLD_TAP";
+            bindings = <&mo>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 74 75 76 77 78 79 80 81>;
+        };
+
+        nc_paste_fslash: nc_paste_fslash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NC_PASTE_FSLASH";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH>, <&kp LS(LC(X))>;
+        };
+
+        nc_paste_b: nc_paste_b {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NC_PASTE_B";
+            #binding-cells = <0>;
+            bindings = <&kp B>, <&kp LS(LC(X))>;
+        };
+
+        control_ncpaste: control_ncpaste {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CONTROL_NCPASTE";
+            #binding-cells = <0>;
+            bindings = <&mo 2>, <&kp LS(LC(X))>;
+        };
+
+        hrow_shift_l: hrow_shift_l {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HROW_SHIFT_L";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            hold-trigger-key-positions = <19 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 54 55 56 57 58 59 65 66 67 68 69 73 74 75 79 80 81 70 77 76 71 72 78>;
+            flavor = "balanced";
+            quick-tap-ms = <125>;
+        };
+
+        hrow_shift_r: hrow_shift_r {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HROW_SHIFT_R";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            flavor = "balanced";
+            quick-tap-ms = <125>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 53 60 61 62 63 64 70 71 72 76 77 78 74 73 79 80 81 75>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base_layer {
+            bindings = <
+&kp PRINTSCREEN  &kp END           &kp F1            &kp F2                &kp F3                      &kp F4                                &kp F5               &kp F6                       &kp F7                 &kp F8                 &kp LEFT_ARROW     &kp RIGHT_ARROW
+&kp PAGE_UP      &kp N1            &kp N2            &kp N3                &kp N4                      &kp N5                                &kp N6               &kp N7                       &kp N8                 &kp N9                 &kp N0             &kp UP_ARROW
+&kp PAGE_DOWN    &kp Z             &kp Y             &kp O                 &kp U                       &kp EQUAL                             &kp Q                &kp L                        &kp D                  &kp P                  &kp X              &kp DOWN_ARROW
+&kp W            &hrow LEFT_WIN C  &hrow LEFT_ALT I  &hrow LEFT_CONTROL A  &hrow_shift_l LEFT_SHIFT E  &kp SEMICOLON                         &kp K                &hrow_shift_r RIGHT_SHIFT H  &hrow RIGHT_CONTROL T  &hrow RIGHT_ALT N      &hrow RIGHT_WIN S  &kp F
+&caps_tapdance   &kp SQT           &kp MINUS         &kp COMMA             &kp PERIOD                  &kp FSLH                              &kp J                &kp M                        &kp G                  &kp B                  &kp V              &kp RSHFT
+&trans           &kp GRAVE         &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &control_ncpaste                                                                       &trans                       &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp BACKSLASH      &trans
+                                                                           &kp ESCAPE                  &kp BACKSPACE  &lower_hold_tap 5 5    &lower_hold_tap 5 5  &kp DEL                      &kp ENTER
+                                                                           &kp SPACE                   &kp TAB        &to 1                  &to 1                &kp BACKSPACE                &kp R
+            >;
+
+            label = "Base Layer";
+        };
+
+        qwerty {
+            bindings = <
+&kp PRINTSCREEN   &kp END           &kp F1            &kp F2                &kp F3                      &kp F4                                &kp F5               &kp F6                       &kp F7                 &kp F8                 &kp LEFT_ARROW             &kp RIGHT_ARROW
+&kp PAGE_UP       &kp N1            &kp N2            &kp N3                &kp N4                      &kp N5                                &kp N6               &kp N7                       &kp N8                 &kp N9                 &kp N0                     &kp UP_ARROW
+&kp PAGE_DOWN     &kp Q             &kp W             &kp E                 &kp R                       &kp T                                 &kp Y                &kp U                        &kp I                  &kp O                  &kp P                      &kp DOWN_ARROW
+&kp LEFT_CONTROL  &hrow LEFT_WIN A  &hrow LEFT_ALT S  &hrow LEFT_CONTROL D  &hrow_shift_l LEFT_SHIFT F  &kp G                                 &kp H                &hrow_shift_r RIGHT_SHIFT J  &hrow RIGHT_CONTROL K  &hrow RIGHT_ALT L      &hrow RIGHT_WIN SEMICOLON  &kp SINGLE_QUOTE
+&caps_tapdance    &kp Z             &kp X             &kp C                 &kp V                       &kp B                                 &kp N                &kp M                        &kp COMMA              &kp PERIOD             &kp SLASH                  &kp RSHFT
+&trans            &kp GRAVE         &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &control_ncpaste                                                                       &tog 3                       &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp BACKSLASH              &none
+                                                                            &kp ESCAPE                  &kp BACKSPACE  &lower_hold_tap 5 5    &lower_hold_tap 5 5  &kp DEL                      &kp ENTER
+                                                                            &kp SPACE                   &kp TAB        &to 0                  &to 0                &kp BACKSPACE                &kp R
+            >;
+        };
+
+        Keyboard_Control_Layer {
+            bindings = <
+&trans       &trans        &trans        &trans        &trans        &trans                  &trans           &trans           &trans           &trans           &trans           &trans
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans           &trans           &trans
+&sys_reset   &trans        &trans        &trans        &trans        &trans                  &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &sys_reset
+&bootloader  &trans        &trans        &trans        &trans        &trans                  &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
+&to 0        &trans        &trans        &trans        &trans        &trans                  &trans           &trans           &trans           &trans           &trans           &to 0
+&to 0        &trans        &trans        &trans        &trans                                                 &trans           &trans           &trans           &trans           &to 0
+                                                       &trans        &trans        &trans    &trans           &trans           &trans
+                                                       &trans        &trans        &trans    &trans           &trans           &trans
+            >;
+        };
+
+        gaming {
+            bindings = <
+&kp ESC    &kp F1          &kp F2  &kp F3  &kp F4     &kp F5                     &kp F1  &kp F2         &kp F3        &kp F4        &kp F5            &kp F6
+&kp GRAVE  &kp N1          &kp N2  &kp N3  &kp N4     &kp N5                     &kp F7  &kp F8         &kp F9        &kp F10       &kp F11           &kp F12
+&kp T      &kp TAB         &kp Q   &kp W   &kp E      &kp R                      &kp Y   &kp U          &kp UP        &kp O         &kp P             &kp MINUS
+&kp G      &kp LEFT_SHIFT  &kp A   &kp S   &kp D      &kp F                      &kp H   &kp LEFT       &kp DOWN      &kp RIGHT     &kp SEMI          &none
+&kp B      &kp LCTRL       &kp Z   &kp X   &kp C      &kp V                      &kp N   &kp M          &kp COMMA     &kp DOT       &none             &kp RSHFT
+&kp N      &kp LALT        &kp N6  &kp N7  &kp N8                                        &tog 3         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY_PAUSE  &kp C_NEXT
+                                           &kp Y      &kp H   &kp PAUSE_BREAK    &mo 5   &kp DELETE     &kp ENTER
+                                           &kp SPACE  &kp O   &kp PERIOD         &none   &kp BACKSPACE  &none
+            >;
+        };
+
+        symbol {
+            bindings = <
+&none      &none             &none                 &none                  &none              &none                         &none  &none          &none        &none      &none      &none
+&kp GRAVE  &kp COMMA         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI           &kp PERIOD                    &none  &none          &none        &none      &none      &none
+&kp EXCL   &kp LEFT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp RIGHT_BRACKET  &kp QMARK                     &none  &kp DEL        &kp LS(TAB)  &kp INS    &kp ESC    &none
+&kp HASH   &kp CARET         &kp EQUAL             &kp UNDER              &kp DOLLAR         &kp ASTERISK                  &none  &kp BACKSPACE  &kp TAB      &kp SPACE  &kp ENTER  &none
+&kp TILDE  &kp LESS_THAN     &kp PIPE              &kp MINUS              &kp GREATER_THAN   &kp FSLH                      &none  &none          &none        &none      &none      &none
+&none      &kp AMPS          &kp SQT               &kp DOUBLE_QUOTES      &kp PLUS                                                &none          &none        &none      &none      &none
+                                                                          &kp BSLH           &kp PERIOD    &kp ASTERISK    &none  &none          &none
+                                                                          &kp PERCENT        &kp COLON     &kp AT          &none  &none          &none
+            >;
+        };
+
+        lower {
+            bindings = <
+&rgb_ug RGB_BRD  &rgb_ug RGB_BRI     &none           &kp C_PREVIOUS  &kp C_NEXT       &kp C_PLAY_PAUSE            &kp C_MUTE             &kp C_VOL_DN    &kp C_VOL_UP  &none          &none            &kp PAUSE_BREAK
+&kp EQUAL        &none               &none           &none           &none            &kp HOME                    &kp LEFT_PARENTHESIS   &kp KP_NUMLOCK  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PRINTSCREEN
+&kp TAB          &none               &none           &kp UP_ARROW    &none            &kp END                     &kp RIGHT_PARENTHESIS  &kp KP_N7       &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp SCROLLLOCK
+&kp ESCAPE       &none               &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_UP                 &kp PERCENT            &kp KP_N4       &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp LS(KP_NUMLOCK)
+&kp GRAVE        &kp K_CONTEXT_MENU  &none           &kp F11         &kp F12          &kp PAGE_DOWN               &kp PERIOD             &kp KP_N1       &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &none
+&none            &kp CAPSLOCK        &kp INSERT      &none           &none                                                               &none           &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &none
+                                                                     &none            &none             &tog 5    &tog 5                 &none           &none
+                                                                     &none            &none             &none     &none                  &none           &none
+            >;
+        };
+    };
+};
+
+// right hand trackball configuration
+// &trackball_peripheral_listener {
+//    input-processors =
+//     activate layer 3 within 500ms of the trackball moving
+//     <&zip_temp_layer 3 500>;
+// };
+//left hand trackball configuration
+
+&trackball_central_listener {
+    input-processors =
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&zip_xy_scaler 1 3>,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&zip_xy_to_scroll_mapper>,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+};
