@@ -114,6 +114,8 @@
                                                                             &kp ESCAPE                  &kp BACKSPACE  &lower_hold_tap 5 5    &lower_hold_tap 5 5  &kp DEL                      &kp ENTER
                                                                             &kp SPACE                   &kp TAB        &to 0                  &to 0                &kp BACKSPACE                &kp R
             >;
+
+            label = "qwerty";
         };
 
         Keyboard_Control_Layer {
@@ -127,6 +129,8 @@
                                                                 &none            &none            &none    &none            &none            &none
                                                                 &none            &none            &none    &none            &none            &none
             >;
+
+            label = "control";
         };
 
         gaming {
@@ -140,6 +144,8 @@
                                            &kp Y      &kp H   &kp PAUSE_BREAK    &mo 5   &kp DELETE     &kp ENTER
                                            &kp SPACE  &kp O   &kp PERIOD         &none   &kp BACKSPACE  &none
             >;
+
+            label = "gaming";
         };
 
         symbol {
@@ -153,6 +159,8 @@
                                                                           &kp BSLH           &kp PERIOD    &kp ASTERISK    &none  &none          &none
                                                                           &kp PERCENT        &kp COLON     &kp AT          &none  &none          &none
             >;
+
+            label = "symbol";
         };
 
         lower {
@@ -166,6 +174,8 @@
                                                                      &none            &none             &tog 5    &tog 5                 &trans          &trans
                                                                      &to 2            &none             &none     &none                  &trans          &to 2
             >;
+
+            label = "lower";
         };
     };
 };
@@ -180,10 +190,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
