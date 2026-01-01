@@ -97,7 +97,7 @@ macros {
         >;
     };
 
-    to_lower: to_qwerty {
+    to_qwerty: to_qwerty {
         compatible = "zmk,behavior-macro";
         label = "TO_QWERTY";
         #binding-cells = <0>;
@@ -107,7 +107,7 @@ macros {
         >;
     };
 
-    to_raise: to_control {
+    to_control: to_control {
         compatible = "zmk,behavior-macro";
         label = "TO_CONTROL";
         #binding-cells = <0>;
@@ -117,7 +117,7 @@ macros {
         >;
     };
 
-    to_media: to_gaming {
+    to_gaming: to_gaming {
         compatible = "zmk,behavior-macro";
         label = "TO_GAMING";
         #binding-cells = <0>;
@@ -127,7 +127,7 @@ macros {
         >;
     };
 
-    to_engram: to_symbol {
+    to_symbol: to_symbol {
         compatible = "zmk,behavior-macro";
         label = "TO_SYMBOL;
         #binding-cells = <0>;
@@ -137,7 +137,7 @@ macros {
         >;
     };
 
-    to_qwerty: to_lower {
+    to_lower: to_lower {
         compatible = "zmk,behavior-macro";
         label = "TO_LOWER";
         #binding-cells = <0>;
