@@ -86,12 +86,14 @@
     };
 
     macros {
-        test_macro: test_macro {
+        to_base: to_base {
             compatible = "zmk,behavior-macro";
+            label = "TO_BASE";
             #binding-cells = <0>;
-            bindings = <&mo 1>;
-            label = "TEST_MACRO";
-        };
+            bindings
+                = <&to BASE>
+                , <&rgb_ug RGB_COLOR_HSB(252, 186, 3)>;   /* orange */
+            };
     };
 
     keymap {
