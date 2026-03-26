@@ -112,10 +112,10 @@
             bindings = <&rgb_ug RGB_COLOR_HSB(0,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
         };
 
-        /* Layer 3: Gaming - Rainbow Cycle */
+        /* Layer 3: Gaming - Purple */
         gaming_indicator {
             layers = <3>;
-            bindings = <&rgb_ug RGB_EFF>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(280,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
         };
 
         /* Layer 4: Symbol - Blue */
@@ -124,10 +124,10 @@
             bindings = <&rgb_ug RGB_COLOR_HSB(240,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
         };
 
-        /* Layer 5: Lower - Purple */
+        /* Layer 5: Lower - Lime Green */
         lower_indicator {
             layers = <5>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(280,100,50)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(85,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
         };
     };
 
