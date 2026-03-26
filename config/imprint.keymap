@@ -91,13 +91,13 @@
     };
 
 /* Layer and HID Listeners for RGB Indication */
-    layer_listeners {
+layer_listeners {
         compatible = "zmk,layer-listeners";
 
         /* Layer 0: Base - White */
         base_indicator {
             layers = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0,0,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
         };
 
         /* Layer 1: Qwerty - Orange */
