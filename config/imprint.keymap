@@ -90,6 +90,57 @@
         };
     };
 
+/* Layer and HID Listeners for RGB Indication */
+    layer_listeners {
+        compatible = "zmk,layer-listeners";
+
+        /* Layer 0: Base - White */
+        base_indicator {
+            layers = <0>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+        };
+
+        /* Layer 1: Qwerty - Orange */
+        qwerty_indicator {
+            layers = <1>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(33,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>; 
+        };
+
+        /* Layer 2: Control - Red */
+        control_indicator {
+            layers = <2>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+        };
+
+        /* Layer 3: Gaming - Rainbow Cycle */
+        gaming_indicator {
+            layers = <3>;
+            bindings = <&rgb_ug RGB_EFF>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+        };
+
+        /* Layer 4: Symbol - Blue */
+        symbol_indicator {
+            layers = <4>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(240,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+        };
+
+        /* Layer 5: Lower - Purple */
+        lower_indicator {
+            layers = <5>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(280,100,50)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+        };
+    };
+
+    hid_listeners {
+        compatible = "zmk,hid-indicator-listeners";
+
+        /* Red for Caps Lock */
+        caps_lock_indicator {
+            indicator = <HID_USAGE_LED_CAPS_LOCK>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0,100,80)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
