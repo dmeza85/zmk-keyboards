@@ -91,45 +91,39 @@
     };
 
 /* Layer and HID Listeners for RGB Indication */
-layer_listeners {
-        compatible = "zmk,layer-listeners";
+&layer_status_listener {
+    compatible = "zmk,layer-status-listener";
 
-        /* Layer 0: Base - White */
-        base_indicator {
-            layers = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0,0,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
-        };
-
-        /* Layer 1: Qwerty - Orange */
-        qwerty_indicator {
-            layers = <1>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(33,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>; 
-        };
-
-        /* Layer 2: Control - Red */
-        control_indicator {
-            layers = <2>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
-        };
-
-        /* Layer 3: Gaming - Purple */
-        gaming_indicator {
-            layers = <3>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(280,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
-        };
-
-        /* Layer 4: Symbol - Blue */
-        symbol_indicator {
-            layers = <4>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(240,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
-        };
-
-        /* Layer 5: Lower - Lime Green */
-        lower_indicator {
-            layers = <5>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(85,100,100)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
-        };
+    status_lower {
+        layers = <5>;
+        rgb-color = <85 100 100>; // Lime Green
     };
+
+    status_symbol {
+        layers = <4>;
+        rgb-color = <240 100 100>; // Blue
+    };
+
+    status_gaming {
+        layers = <3>;
+        rgb-color = <280 100 100>; // Purple
+    };
+
+    status_control {
+        layers = <2>;
+        rgb-color = <0 100 100>; // Red
+    };
+
+    status_qwerty {
+        layers = <1>;
+        rgb-color = <33 100 100>; // Orange
+    };
+
+    status_base {
+        layers = <0>;
+        rgb-color = <0 0 100>; // White
+    };
+};
 
     hid_listeners {
         compatible = "zmk,hid-indicator-listeners";
