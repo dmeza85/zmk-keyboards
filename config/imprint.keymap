@@ -96,32 +96,32 @@
 
         status_lower {
             layers = <5>;
-            rgb-color = <240 100 100>; // Blue
+            bindings = <&rgb_ug RGB_COLOR_HSB(240,100,100)>; // Blue
         };
 
         status_symbol {
             layers = <4>;
-            rgb-color = <60 100 100>; // Yellow
+            bindings = <&rgb_ug RGB_COLOR_HSB(60,100,100)>; // Yellow
         };
 
         status_gaming {
             layers = <3>;
-            rgb-color = <300 100 100>; // Purple (Placeholder for Rainbow)
+            bindings = <&rgb_ug RGB_COLOR_HSB(300,100,100)>; // Purple Placeholder
         };
 
         status_control {
             layers = <2>;
-            rgb-color = <120 100 100>; // Green
+            bindings = <&rgb_ug RGB_COLOR_HSB(120,100,100)>; // Green
         };
 
         status_qwerty {
             layers = <1>;
-            rgb-color = <280 100 100>; // Purple
+            bindings = <&rgb_ug RGB_COLOR_HSB(280,100,100)>; // Purple
         };
 
         status_base {
             layers = <0>;
-            rgb-color = <190 100 100>; // Teal
+            bindings = <&rgb_ug RGB_COLOR_HSB(190,100,100)>; // Teal
         };
     };
 
