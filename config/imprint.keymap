@@ -91,47 +91,37 @@
     };
 
 /* Layer and HID Listeners for RGB Indication */
-layer_status_listener: layer_status_listener {
-    compatible = "zmk,layer-status-listener";
+    layer_status_listener: layer_status_listener {
+        compatible = "zmk,layer-status-listener";
 
-    status_lower {
-        layers = <5>;
-        rgb-color = <85 100 100>; // Lime Green [cite: 24, 25]
-    };
+        status_lower {
+            layers = <5>;
+            rgb-color = <240 100 100>; // Blue
+        };
 
-    status_symbol {
-        layers = <4>;
-        rgb-color = <240 100 100>; // Blue [cite: 26]
-    };
+        status_symbol {
+            layers = <4>;
+            rgb-color = <60 100 100>; // Yellow
+        };
 
-    status_gaming {
-        layers = <3>;
-        rgb-color = <280 100 100>; // Purple [cite: 27, 28]
-    };
+        status_gaming {
+            layers = <3>;
+            rgb-color = <300 100 100>; // Purple (Placeholder for Rainbow)
+        };
 
-    status_control {
-        layers = <2>;
-        rgb-color = <0 100 100>; // Red 
-    };
+        status_control {
+            layers = <2>;
+            rgb-color = <120 100 100>; // Green
+        };
 
-    status_qwerty {
-        layers = <1>;
-        rgb-color = <33 100 100>; // Orange [cite: 30, 31]
-    };
+        status_qwerty {
+            layers = <1>;
+            rgb-color = <280 100 100>; // Purple
+        };
 
-    status_base {
-        layers = <0>;
-        rgb-color = <0 0 100>; // White [cite: 32]
-    };
-};
-
-    hid_listeners {
-        compatible = "zmk,hid-indicator-listeners";
-
-        /* Red for Caps Lock */
-        caps_lock_indicator {
-            indicator = <HID_USAGE_LED_CAPS_LOCK>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0,100,80)>, <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+        status_base {
+            layers = <0>;
+            rgb-color = <190 100 100>; // Teal
         };
     };
 
