@@ -186,14 +186,14 @@
 
         layer_Cursor {
             bindings = <
-&none      &none      &none      &none          &none      &none                &none      &none        &none      &none      &none      &none
-&none      &kp ESC    &kp INS    &kp LS(TAB)    &kp DEL    &none                &none      &none        &none      &none      &none      &none
-&none      &kp RET    &kp SPACE  &kp TAB        &kp BSPC   &kp LC(X)            &kp LC(X)  &kp LS(TAB)  &kp LC(Z)  &kp LC(Y)  &kp TAB    &none
-&kp LSHFT  &kp LGUI   &kp LALT   &kp LCTRL      &kp LSHFT  &kp LC(C)            &kp LC(C)  &kp LEFT     &kp DOWN   &kp UP     &kp RIGHT  &kp LSHFT
-&kp LC(L)  &kp LC(A)  &none      &none          &kp LC(F)  &kp LC(V)            &none      &kp HOME     &kp PG_DN  &kp PG_UP  &kp END    &kp LC(L)
-&trans     &kp LC(Z)  &kp LC(Y)  &kp LC(LS(G))  &trans                                     &trans       &none      &none      &none      &trans
-                                                &trans     &trans     &trans    &trans     &trans       &trans
-                                                &trans     &trans     &trans    &trans     &trans       &trans
+&none          &none      &none      &none          &none      &none                &none      &none        &none      &none      &none      &none
+&none          &kp ESC    &kp INS    &kp LS(TAB)    &kp DEL    &none                &none      &none        &none      &none      &none      &none
+&none          &kp RET    &kp SPACE  &kp TAB        &kp BSPC   &kp LC(X)            &kp LC(X)  &kp LS(TAB)  &kp LC(Z)  &kp LC(Y)  &kp TAB    &none
+&smart_caps    &kp LGUI   &kp LALT   &kp LCTRL      &kp LSHFT  &kp LC(C)            &kp LC(C)  &kp LEFT     &kp DOWN   &kp UP     &kp RIGHT  &smart_caps
+&kp LC(L)      &kp LC(A)  &none      &none          &kp LC(F)  &kp LC(V)            &none      &kp HOME     &kp PG_DN  &kp PG_UP  &kp END    &kp LC(L)
+&kp LC(SLASH)  &kp LC(Z)  &kp LC(Y)  &kp LC(LS(G))  &trans                                     &trans       &none      &none      &none      &trans
+                                                    &trans     &trans     &trans    &trans     &trans       &trans
+                                                    &trans     &trans     &trans    &trans     &trans       &trans
             >;
         };
 
