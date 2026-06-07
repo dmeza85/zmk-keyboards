@@ -173,14 +173,14 @@
 
         layer_gaming {
             bindings = <
-&kp ESCAPE  &kp F1            &kp F2        &kp F3  &kp F4        &kp F5                     &kp F1  &kp F2         &kp F3        &kp F4        &kp F5      &kp F6
-&kp GRAVE   &kp N1            &kp N2        &kp N3  &kp N4        &kp N5                     &kp F7  &kp F8         &kp F9        &kp F10       &kp F11     &kp F12
-&kp T       &kp TAB           &kp Q         &kp W   &kp E         &kp R                      &none   &none          &none         &none         &none       &none
-&kp G       &kp LEFT_SHIFT    &kp A         &kp S   &kp D         &kp F                      &none   &kp LEFT       &kp UP        &kp DOWN      &kp RIGHT   &none
-&kp B       &kp LEFT_CONTROL  &kp Z         &kp X   &kp C         &kp V                      &none   &none          &none         &none         &none       &none
-&kp N       &kp LEFT_ALT      &kp NUMBER_6  &kp N7  &kp NUMBER_8                                     &td_gmng       &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PLAY_PAUSE
-                                                    &kp SPACE     &kp O   &kp DOT            &mo 5   &kp BACKSPACE  &kp ENTER
-                                                    &kp Y         &kp H   &kp PAUSE_BREAK    &none   &kp DEL        &none
+&kp ESCAPE  &kp F1            &kp F2        &kp F3  &kp F4        &kp F5                     &kp F1    &kp F2         &kp F3        &kp F4        &kp F5      &kp F6
+&kp GRAVE   &kp N1            &kp N2        &kp N3  &kp N4        &kp N5                     &kp F7    &kp F8         &kp F9        &kp F10       &kp F11     &kp F12
+&kp T       &kp TAB           &kp Q         &kp W   &kp E         &kp R                      &none     &none          &none         &none         &none       &none
+&kp G       &kp LEFT_SHIFT    &kp A         &kp S   &kp D         &kp F                      &none     &kp LEFT       &kp UP        &kp DOWN      &kp RIGHT   &none
+&kp B       &kp LEFT_CONTROL  &kp Z         &kp X   &kp C         &kp V                      &none     &none          &none         &none         &none       &none
+&kp N       &kp LEFT_ALT      &kp NUMBER_6  &kp N7  &kp NUMBER_8                                       &none          &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PLAY_PAUSE
+                                                    &kp SPACE     &kp O   &kp DOT            &mo 5     &kp BACKSPACE  &kp ENTER
+                                                    &kp Y         &kp H   &kp PAUSE_BREAK    &td_gmng  &kp DEL        &none
             >;
         };
 
