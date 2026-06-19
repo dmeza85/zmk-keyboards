@@ -232,8 +232,8 @@
 &none            &none          &none                 &none                  &none             &none                        &none          &none              &none             &none      &none          &none
 &none            &kp GRAVE      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI          &kp COMMA                    &none          &none              &none             &none      &none          &none
 &kp EXCLAMATION  &kp LBKT       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp RBKT          &kp QUESTION                 &kp DOT        &kp DEL            &kp LS(TAB)       &kp INS    &kp ESC        &none
-&kp POUND        &kp CARET      &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR        &kp STAR                     &kp COMMA      &kp BSPC           &kp TAB           &kp SPACE  &kp RET        &kp GRAVE
-&kp TILDE        &kp LESS_THAN  &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp FSLH                     &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp GRAVE  &kp BACKSLASH  &none
+&kp POUND        &kp CARET      &kp EQUAL             &kp MINUS              &kp DOLLAR        &kp STAR                     &kp COMMA      &kp BSPC           &kp TAB           &kp SPACE  &kp RET        &kp GRAVE
+&kp TILDE        &kp LESS_THAN  &kp PIPE              &kp UNDERSCORE         &kp GREATER_THAN  &kp FSLH                     &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp GRAVE  &kp BACKSLASH  &none
 &dot_dot         &kp AMPERSAND  &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES      &kp PLUS                                                      &kp RIGHT_SHIFT    &kp RCTRL         &kp RALT   &kp RIGHT_WIN  &trans
                                                                              &kp BACKSLASH     &kp PERIOD    &kp STAR       &trans         &trans             &trans
                                                                              &kp PERCENT       &kp COLON     &kp AT_SIGN    &trans         &trans             &trans
