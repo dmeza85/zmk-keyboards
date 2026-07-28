@@ -209,8 +209,8 @@
 &smart_caps     &kp LGUI   &kp LALT       &kp LCTRL    &kp LSHFT  &kp X             &kp K             &kp KP_N4             &kp KP_N5     &kp KP_N6   &kp MINUS              &kp COLON
 &kp E           &none      &none          &none        &kp LC(F)  &kp F             &kp J             &kp KP_N1             &kp KP_N2     &kp KP_N3   &kp FSLH               &kp CARET
 &kp UNDERSCORE  &kp LC(Z)  &kp LC(LS(Z))  &none        &trans                                         &kp LEFT_PARENTHESIS  &kp LBKT      &kp RBKT    &kp RIGHT_PARENTHESIS  &kp AT_SIGN
-                                                       &trans     &trans  &trans    &kp LESS_THAN     &kp KP_EQUAL          &kp KP_N0
-                                                       &trans     &trans  &trans    &kp GREATER_THAN  &kp KP_DOT            &kp KP_COMMA
+                                                       &trans     &trans  &trans    &kp LESS_THAN     &kp KP_DOT            &kp KP_N0
+                                                       &trans     &trans  &trans    &kp GREATER_THAN  &kp RC(KP_COMMA)      &kp KP_ENTER
             >;
         };
 
