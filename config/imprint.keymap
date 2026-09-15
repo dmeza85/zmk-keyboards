@@ -25,8 +25,6 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <50>;
-            hold-while-undecided;
-            retro-tap;
 
             // NOTE: To make this strictly bilateral (only fires when you press
             // a key on the opposite hand), you must define your right hand key positions.
@@ -45,10 +43,40 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <50>;
+
+            // hold-trigger-key-positions = < 0 1 2 ... >; // Map to left hand keys
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <73 74 75 79 80 81 70 71 72 76 77 78 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 53 60 61 62 63 64 46 45 44 43>;
+        };
+
+        hm_l_sft: homerow_mods_left_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_LEFT_SHIFT";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <50>;
             hold-while-undecided;
             retro-tap;
 
-            // hold-trigger-key-positions = < 0 1 2 ... >; // Map to left hand keys
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <70 76 77 71 78 72 73 74 75 79 80 81 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 54 55 56 57 58 59 65 66 67 68 69 75 37 38 39 40>;
+        };
+
+        hm_r_sft: homerow_mods_right_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT_SHIFT";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <50>;
+            hold-while-undecided;
+            retro-tap;
 
             bindings = <&kp>, <&kp>;
 
@@ -381,7 +409,7 @@
 &kp PSCRN  &kp F1        &kp F2        &kp F3         &kp F4          &kp F5                 &kp F6  &kp F7         &kp F8         &kp F9        &kp F10       &f11_f12
 &kp EQUAL  &kp N1        &kp N2        &kp N3         &kp N4          &kp N5                 &kp N6  &kp N7         &kp N8         &kp N9        &kp N0        &kp MINUS
 &kp TAB    &kp Q         &kp Y         &kp O          &kp U           &kp EQUAL              &kp X   &kp L          &kp D          &kp P         &kp Z         &kp BSLH
-&kp B      &hm_l LGUI C  &hm_l LALT I  &hm_l LCTRL A  &hm_l LSHFT E   &kp MINUS              &kp K   &hm_r RSHFT H  &hm_r RCTRL T  &hm_r RALT N  &hm_r RGUI S  &kp W
+&kp B      &hm_l LGUI C  &hm_l LALT I  &hm_l LCTRL A  &hm_l_sft LSHFT E   &kp MINUS              &kp K   &hm_r_sft RSHFT H  &hm_r RCTRL T  &hm_r RALT N  &hm_r RGUI S  &kp W
 &td_sk_cl  &kp SQT       &kp COMMA     &kp DOT        &kp SEMI        &kp FSLH               &kp J   &kp M          &kp G          &kp F         &kp V         &smart_caps
 &mo 11     &kp BSLH      &kp LPAR      &kp RPAR       &smart_caps                                    &smart_caps    &kp LBKT       &kp RBKT      &kp GRAVE     &mo 11
                                                       &thumb 3 SPACE  &thumb 4 TAB  &to 1    &to 1   &thumb 4 BSPC  &thumb 5 R
@@ -394,7 +422,7 @@
 &kp PSCRN  &kp F1        &kp F2        &kp F3         &kp F4          &kp F5                 &kp F6    &kp F7         &kp F8          &kp F9        &kp F10          &f11_f12
 &kp EQUAL  &kp N1        &kp N2        &kp N3         &kp N4          &kp N5                 &kp N6    &kp N7         &kp N8          &kp N9        &kp N0           &kp MINUS
 &kp TAB    &kp Q         &kp W         &kp E          &kp R           &kp T                  &kp Y     &kp U          &kp I           &kp O         &kp P            &kp BSLH
-&kp B      &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F   &kp G                  &kp H     &hm_r RSHFT J  &hm_r RCTRL K   &hm_r RALT L  &hm_r RGUI SEMI  &kp SQT
+&kp B      &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l_sft LSHFT F   &kp G                  &kp H     &hm_r_sft RSHFT J  &hm_r RCTRL K   &hm_r RALT L  &hm_r RGUI SEMI  &kp SQT
 &td_sk_cl  &kp Z         &kp X         &kp C          &kp V           &kp B                  &kp N     &kp M          &kp COMMA       &kp DOT       &kp FSLH         &smart_caps
 &mo 11     &kp BSLH      &kp LPAR      &kp RPAR       &smart_caps                                      &smart_caps    &kp LBKT        &kp RBKT      &kp GRAVE        &mo 11
                                                       &thumb 3 SPACE  &thumb 4 TAB  &to 0    &to 0     &thumb 4 BSPC  &thumb 5 SPACE
