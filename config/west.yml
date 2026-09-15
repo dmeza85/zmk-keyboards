@@ -18,6 +18,6 @@ manifest:
       revision: startup_optimization
     - name: zmk-listeners
       remote: ssbb
-      revision: main
+      revision: 7f9c5c33418589bb563150855c5de282bb3e1f5b
   self:
     path: config
