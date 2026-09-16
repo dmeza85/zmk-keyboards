@@ -13,13 +13,20 @@
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
+#define RGB_EFFECT_SOLID 0
+#define RGB_EFFECT_SWIRL 3
+
 struct layer_color {
     uint8_t layer;
     uint32_t hsb_value;
+    uint8_t effect;
 };
 
 #define LAYER_COLOR(_layer, _h, _s, _b)                                                          \
-    { .layer = _layer, .hsb_value = RGB_COLOR_HSB_VAL(_h, _s, _b) }
+    { .layer = _layer, .hsb_value = RGB_COLOR_HSB_VAL(_h, _s, _b), .effect = RGB_EFFECT_SOLID }
+
+#define LAYER_COLOR_EFFECT(_layer, _h, _s, _b, _effect)                                          \
+    { .layer = _layer, .hsb_value = RGB_COLOR_HSB_VAL(_h, _s, _b), .effect = _effect }
 
 static const struct layer_color layer_colors[] = {
     LAYER_COLOR(11, 0, 0, 65),
@@ -28,10 +35,22 @@ static const struct layer_color layer_colors[] = {
     LAYER_COLOR(5, 270, 75, 65),
     LAYER_COLOR(4, 50, 90, 65),
     LAYER_COLOR(3, 165, 80, 65),
-    LAYER_COLOR(2, 0, 90, 65),
+    LAYER_COLOR_EFFECT(2, 0, 90, 65, RGB_EFFECT_SWIRL),
     LAYER_COLOR(1, 120, 75, 65),
     LAYER_COLOR(0, 220, 75, 65),
 };
+
+static void imprint_rgb_queue_action(struct zmk_behavior_binding_event *event, uint32_t param1,
+                                     uint32_t param2) {
+    struct zmk_behavior_binding binding = {
+        .behavior_dev = DEVICE_DT_NAME(DT_NODELABEL(rgb_ug)),
+        .param1 = param1,
+        .param2 = param2,
+    };
+
+    zmk_behavior_queue_add(event, binding, true, 5);
+    zmk_behavior_queue_add(event, binding, false, 5);
+}
 
 static void imprint_rgb_apply_active_layer_color(void) {
     for (int i = ZMK_KEYMAP_LAYERS_LEN - 1; i >= 0; i--) {
@@ -44,11 +63,6 @@ static void imprint_rgb_apply_active_layer_color(void) {
                 continue;
             }
 
-            struct zmk_behavior_binding binding = {
-                .behavior_dev = DEVICE_DT_NAME(DT_NODELABEL(rgb_ug)),
-                .param1 = RGB_COLOR_HSB_CMD,
-                .param2 = layer_colors[j].hsb_value,
-            };
             struct zmk_behavior_binding_event event = {
                 .position = INT32_MAX,
                 .timestamp = k_uptime_get(),
@@ -57,8 +71,8 @@ static void imprint_rgb_apply_active_layer_color(void) {
 #endif
             };
 
-            zmk_behavior_queue_add(&event, binding, true, 5);
-            zmk_behavior_queue_add(&event, binding, false, 5);
+            imprint_rgb_queue_action(&event, RGB_COLOR_HSB_CMD, layer_colors[j].hsb_value);
+            imprint_rgb_queue_action(&event, RGB_EFS_CMD, layer_colors[j].effect);
             return;
         }
     }
