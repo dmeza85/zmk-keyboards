@@ -584,7 +584,7 @@
         compatible = "zmk,layer-listeners";
 
         color_Enthium { layers = <0>;  bindings = <&rgb_ug RGB_COLOR_HSB(170, 60, 15)>, <&none>; };
-        color_QWERTY  { layers = <1>;  bindings = <&rgb_ug RGB_COLOR_HSB(100, 60, 15)>, <&none>; };
+        color_QWERTY  { layers = <1>;  bindings = <&rgb_ug RGB_COLOR_HSB(100, 60, 15)>, <&rgb_ug RGB_COLOR_HSB(170, 60, 15)>; };
         color_gaming  { layers = <2>;  bindings = <&rgb_ug RGB_COLOR_HSB(0,   90, 40)>, <&rgb_ug RGB_COLOR_HSB(0, 0, 10)>; };
         color_Cursor  { layers = <3>;  bindings = <&rgb_ug RGB_COLOR_HSB(190, 80, 30)>, <&rgb_ug RGB_COLOR_HSB(0, 0, 10)>; };
         color_Number  { layers = <4>;  bindings = <&rgb_ug RGB_COLOR_HSB(50,  90, 30)>, <&rgb_ug RGB_COLOR_HSB(0, 0, 10)>; };
