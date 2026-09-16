@@ -1,0 +1,7 @@
+config IMPRINT_RGB_LAYER_COLORS
+    bool "Per-layer RGB underglow color indicator"
+    default y
+    depends on ZMK_RGB_UNDERGLOW
+    help
+      Sets the underglow color to a distinct value based on the highest
+      currently active keymap layer.

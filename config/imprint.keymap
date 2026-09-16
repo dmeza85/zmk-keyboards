@@ -579,18 +579,4 @@
             then-layer = <10>;
         };
     };
-
-    layer_listeners {
-        compatible = "zmk,layer-listeners";
-
-        color_Enthium { layers = <0>;  bindings = <&rgb_ug RGB_COLOR_HSB(220, 75, 65)>, <&none>; };
-        color_QWERTY  { layers = <1>;  bindings = <&rgb_ug RGB_COLOR_HSB(120, 75, 65)>, <&rgb_ug RGB_COLOR_HSB(220, 75, 65)>; };
-        color_gaming  { layers = <2>;  bindings = <&rgb_ug RGB_COLOR_HSB(0,   90, 65)>, <&rgb_ug RGB_COLOR_HSB(0, 0, 10)>; };
-        color_Cursor  { layers = <3>;  bindings = <&rgb_ug RGB_COLOR_HSB(165, 80, 65)>, <&rgb_ug RGB_COLOR_HSB(0, 0, 10)>; };
-        color_Number  { layers = <4>;  bindings = <&rgb_ug RGB_COLOR_HSB(50,  90, 65)>, <&rgb_ug RGB_COLOR_HSB(0, 0, 10)>; };
-        color_Function{ layers = <5>;  bindings = <&rgb_ug RGB_COLOR_HSB(270, 75, 65)>, <&rgb_ug RGB_COLOR_HSB(0, 0, 10)>; };
-        color_Symbol  { layers = <6>;  bindings = <&rgb_ug RGB_COLOR_HSB(310, 80, 65)>, <&rgb_ug RGB_COLOR_HSB(0, 0, 10)>; };
-        color_Mac     { layers = <7>;  bindings = <&rgb_ug RGB_COLOR_HSB(30,  85, 65)>, <&rgb_ug RGB_COLOR_HSB(0, 0, 10)>; };
-        color_System  { layers = <11>; bindings = <&rgb_ug RGB_COLOR_HSB(0,   0, 65)>, <&rgb_ug RGB_COLOR_HSB(0, 0, 10)>; };
-    };
 };
