@@ -1,0 +1,5 @@
+description: RGB Idle Timeout Adjust
+
+compatible: "zmk,behavior-rgb-idle-timeout"
+
+include: one_param.yaml

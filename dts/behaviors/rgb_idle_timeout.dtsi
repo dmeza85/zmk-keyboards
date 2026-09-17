@@ -1,0 +1,9 @@
+/ {
+    behaviors {
+        rgb_idle_timeout: rgb_idle_timeout {
+            compatible = "zmk,behavior-rgb-idle-timeout";
+            #binding-cells = <1>;
+            display-name = "RGB Idle Timeout";
+        };
+    };
+};

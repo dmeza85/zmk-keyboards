@@ -2,9 +2,11 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/hid_usage.h>
 #include <behaviors.dtsi>
+#include <behaviors/rgb_idle_timeout.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/rgb_idle_timeout.h>
 
 / {
     // ========================================================================
@@ -549,7 +551,7 @@
 
         layer_System {
             bindings = <
-&sys_reset   &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &sys_reset
+&sys_reset   &rgb_idle_timeout RGB_IDLE_TIMEOUT_INC_CMD  &rgb_idle_timeout RGB_IDLE_TIMEOUT_DEC_CMD  &none  &none  &none    &none  &none  &none  &none  &none  &sys_reset
 &tog 7       &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &tog 7
 &none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF            &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &none
 &none        &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR            &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_SPD  &none
