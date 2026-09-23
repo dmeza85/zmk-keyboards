@@ -58,7 +58,7 @@
             label = "HOMEROW_MODS_LEFT_SHIFT";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <50>;
             hold-while-undecided;
@@ -73,7 +73,7 @@
             label = "HOMEROW_MODS_RIGHT_SHIFT";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <50>;
             hold-while-undecided;
