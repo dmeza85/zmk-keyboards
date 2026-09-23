@@ -62,7 +62,6 @@
             quick-tap-ms = <150>;
             require-prior-idle-ms = <50>;
             hold-while-undecided;
-            retro-tap;
 
             bindings = <&kp>, <&kp>;
 
@@ -78,7 +77,6 @@
             quick-tap-ms = <150>;
             require-prior-idle-ms = <50>;
             hold-while-undecided;
-            retro-tap;
 
             bindings = <&kp>, <&kp>;
 
