@@ -130,15 +130,6 @@
             tapping-term-ms = <170>;
         };
 
-        td_gmng: td_gmng {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_GAMING";
-            #binding-cells = <0>;
-            bindings = <&none>, <&tog 2>;
-
-            tapping-term-ms = <190>;
-        };
-
         f11_f12: f11_f12 {
             compatible = "zmk,behavior-tap-dance";
             label = "F11_F12";
@@ -401,6 +392,146 @@
 
     chosen { zmk,matrix-transform = &imprint_function_row_full_bottom_row; };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_gaming_toggle {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <48 61>;
+            bindings = <&tog 2>;
+            layers = <0 1 2 7>;
+        };
+
+        combo_mac_toggle {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <59 68>;
+            bindings = <&tog 7>;
+            layers = <0 1 2 7>;
+        };
+
+        combo_sticky_shift_left {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <70 77>;
+            bindings = <&sk LSHFT>;
+            layers = <0 1 7>;
+        };
+
+        combo_sticky_shift_right {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <75 80>;
+            bindings = <&sk RSHFT>;
+            layers = <0 1 7>;
+        };
+
+        combo_caps_word_left {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <76 77>;
+            bindings = <&smart_caps>;
+            layers = <0 1 7>;
+        };
+
+        combo_caps_word_right {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <81 80>;
+            bindings = <&smart_caps>;
+            layers = <0 1 7>;
+        };
+
+        combo_caps_lock_left {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <71 78>;
+            bindings = <&kp CAPS>;
+            layers = <0 1 7>;
+        };
+
+        combo_caps_lock_right {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <74 79>;
+            bindings = <&kp CAPS>;
+            layers = <0 1 7>;
+        };
+
+        combo_alt_tab {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <70 76>;
+            bindings = <&mod_tab LALT>;
+            layers = <0 1 7>;
+        };
+
+        combo_ctrl_tab {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <71 77>;
+            bindings = <&mod_tab LCTRL>;
+            layers = <0 1 7>;
+        };
+
+        combo_win_tab {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <72 78>;
+            bindings = <&mod_tab LGUI>;
+            layers = <0 1 7>;
+        };
+
+        combo_sticky_altgr_left {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <70 71>;
+            bindings = <&sk RALT>;
+            layers = <0 1 7>;
+        };
+
+        combo_sticky_altgr_right {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <75 74>;
+            bindings = <&sk RALT>;
+            layers = <0 1 7>;
+        };
+
+        combo_sticky_win_left {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <71 72>;
+            bindings = <&sk LGUI>;
+            layers = <0 1 7>;
+        };
+
+        combo_sticky_win_right {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <74 73>;
+            bindings = <&sk RGUI>;
+            layers = <0 1 7>;
+        };
+
+        combo_base_reset_left {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <70 71 72>;
+            bindings = <&to 0>;
+            layers = <1 2 3 4 5 6 7 8 9 10 11>;
+        };
+
+        combo_base_reset_right {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            key-positions = <75 74 73>;
+            bindings = <&to 0>;
+            layers = <1 2 3 4 5 6 7 8 9 10 11>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -411,7 +542,7 @@
 &kp TAB    &kp Q         &kp Y         &kp O          &kp U           &kp EQUAL              &kp X   &kp L          &kp D          &kp P         &kp Z         &kp BSLH
 &kp B      &hm_l LGUI C  &hm_l LALT I  &hm_l LCTRL A  &hm_l_sft LSHFT E   &kp MINUS              &kp K   &hm_r_sft RSHFT H  &hm_r RCTRL T  &hm_r RALT N  &hm_r RGUI S  &kp W
 &td_sk_cl  &kp SQT       &kp COMMA     &kp DOT        &kp SEMI        &kp FSLH               &kp J   &kp M          &kp G          &kp F         &kp V         &smart_caps
-&mo 11     &kp BSLH      &kp LPAR      &kp RPAR       &smart_caps                                    &smart_caps    &kp LBKT       &kp RBKT      &kp GRAVE     &mo 11
+&mo 12     &kp BSLH      &kp LPAR      &kp RPAR       &smart_caps                                    &smart_caps    &kp LBKT       &kp RBKT      &kp GRAVE     &mo 12
                                                       &thumb 3 SPACE  &thumb 4 TAB  &to 1    &to 1   &thumb 4 BSPC  &thumb 5 R
                                                       &thumb 6 ESC    &kp BSPC      &mo 11   &mo 11  &kp DEL        &thumb 6 RET
             >;
@@ -424,9 +555,9 @@
 &kp TAB    &kp Q         &kp W         &kp E          &kp R           &kp T                  &kp Y     &kp U          &kp I           &kp O         &kp P            &kp BSLH
 &kp B      &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l_sft LSHFT F   &kp G                  &kp H     &hm_r_sft RSHFT J  &hm_r RCTRL K   &hm_r RALT L  &hm_r RGUI SEMI  &kp SQT
 &td_sk_cl  &kp Z         &kp X         &kp C          &kp V           &kp B                  &kp N     &kp M          &kp COMMA       &kp DOT       &kp FSLH         &smart_caps
-&mo 11     &kp BSLH      &kp LPAR      &kp RPAR       &smart_caps                                      &smart_caps    &kp LBKT        &kp RBKT      &kp GRAVE        &mo 11
+&mo 12     &kp BSLH      &kp LPAR      &kp RPAR       &smart_caps                                      &smart_caps    &kp LBKT        &kp RBKT      &kp GRAVE        &mo 12
                                                       &thumb 3 SPACE  &thumb 4 TAB  &to 0    &to 0     &thumb 4 BSPC  &thumb 5 SPACE
-                                                      &thumb 6 ESC    &kp BSPC      &none    &td_gmng  &kp DEL        &thumb 6 RET
+                                                      &thumb 6 ESC    &kp BSPC      &mo 11   &mo 11    &kp DEL        &thumb 6 RET
             >;
         };
 
@@ -439,7 +570,7 @@
 &kp B       &kp LEFT_CONTROL  &kp Z         &kp X   &kp C         &kp V                      &none      &none          &none         &none         &none       &none
 &kp N       &kp LEFT_ALT      &kp NUMBER_6  &kp N7  &kp NUMBER_8                                        &none          &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PLAY_PAUSE
                                                     &kp SPACE     &kp O   &kp PAUSE_BREAK    &kp COMMA  &kp BACKSPACE  &kp K
-                                                    &kp Y         &kp H   &kp PERIOD         &td_gmng   &kp DEL        &kp ENTER
+                                                    &kp Y         &kp H   &kp PERIOD         &none      &kp DEL        &kp ENTER
             >;
         };
 
@@ -451,7 +582,7 @@
 &smart_caps    &kp LGUI   &kp LALT   &kp LCTRL      &kp LSHFT  &kp LC(C)            &kp LC(C)  &kp LEFT     &kp DOWN   &kp UP     &kp RIGHT  &smart_caps
 &kp LC(L)      &kp LC(A)  &none      &none          &kp LC(F)  &kp LC(V)            &none      &kp HOME     &kp PG_DN  &kp PG_UP  &kp END    &kp LC(L)
 &kp LC(SLASH)  &kp LC(Z)  &kp LC(Y)  &kp LC(LS(G))  &trans                                     &trans       &none      &none      &none      &trans
-                                                    &trans     &trans     &trans    &trans     &trans       &trans
+                                                    &tog 3     &trans     &trans    &trans     &trans       &trans
                                                     &trans     &trans     &trans    &trans     &trans       &trans
             >;
         };
@@ -464,7 +595,7 @@
 &smart_caps     &kp LGUI   &kp LALT       &kp LCTRL    &kp LSHFT  &kp X             &kp K             &kp KP_N4             &kp KP_N5     &kp KP_N6   &kp MINUS              &kp COLON
 &kp E           &none      &none          &none        &kp LC(F)  &kp F             &kp J             &kp KP_N1             &kp KP_N2     &kp KP_N3   &kp FSLH               &kp CARET
 &kp UNDERSCORE  &kp LC(Z)  &kp LC(LS(Z))  &none        &trans                                         &kp LEFT_PARENTHESIS  &kp LBKT      &kp RBKT    &kp RIGHT_PARENTHESIS  &kp AT_SIGN
-                                                       &trans     &trans  &trans    &kp LESS_THAN     &kp KP_DOT            &kp KP_N0
+                                                       &trans     &tog 4  &trans    &kp LESS_THAN     &kp KP_DOT            &kp KP_N0
                                                        &trans     &trans  &trans    &kp GREATER_THAN  &kp RC(KP_COMMA)      &kp KP_ENTER
             >;
         };
@@ -477,7 +608,7 @@
 &kp LSHFT  &kp LGUI  &kp LALT   &kp LCTRL    &kp LSHFT  &kp K_WWW             &kp F4      &kp F5      &kp F6      &kp F11       &kp F14       &none
 &none      &none     &none      &none        &kp LC(F)  &kp LG(E)             &kp F1      &kp F2      &kp F3      &kp F12       &kp F15       &none
 &trans     &none     &none      &none        &trans                                       &trans      &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans
-                                             &trans     &trans      &trans    &trans      &trans      &trans
+                                             &trans     &trans      &trans    &trans      &trans      &tog 5
                                              &trans     &trans      &trans    &trans      &trans      &trans
             >;
         };
@@ -491,7 +622,7 @@
 &kp TILDE        &kp LESS_THAN  &kp PIPE              &kp UNDERSCORE         &kp GREATER_THAN  &kp FSLH                     &kp SEMICOLON  &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp GRAVE  &kp BACKSLASH  &none
 &dot_dot         &kp AMPERSAND  &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES      &kp PLUS                                                      &kp RIGHT_SHIFT    &kp RCTRL         &kp RALT   &kp RIGHT_WIN  &trans
                                                                              &kp BACKSLASH     &kp PERIOD    &kp STAR       &trans         &trans             &trans
-                                                                             &kp PERCENT       &kp COLON     &kp AT_SIGN    &trans         &trans             &trans
+                                                                             &kp PERCENT       &kp COLON     &kp AT_SIGN    &trans         &trans             &tog 6
             >;
         };
 
@@ -556,7 +687,20 @@
 &none        &kp K_APP        &kp PSCRN        &kp PAUSE_BREAK  &rgb_ug RGB_TOG  &kp C_SLEEP                &sysrq           &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_CLR
 &bootloader  &none            &none            &kp F12          &kp DELETE                                                   &trans           &kp SLCK         &kp CAPS         &kp KP_NUMLOCK   &bootloader
                                                                 &trans           &trans           &trans    &trans           &trans           &trans
-                                                                &trans           &trans           &trans    &trans           &trans           &trans
+                                                                &trans           &trans           &tog 11    &tog 11           &trans           &trans
+            >;
+        };
+
+        layer_Lower {
+            bindings = <
+&none  &none  &none  &none  &none  &none      &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none      &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none      &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none      &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none      &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none              &none  &none  &none  &none  &none
+                                &tog 3  &tog 4  &none     &none  &tog 4  &tog 5
+                                &tog 6  &none   &tog 11   &tog 11  &none  &tog 6
             >;
         };
     };
