@@ -36,8 +36,8 @@ static const struct layer_color layer_colors[] = {
     LAYER_COLOR(4, 50, 90, 65),
     LAYER_COLOR(3, 165, 80, 65),
     LAYER_COLOR_EFFECT(2, 0, 90, 65, RGB_EFFECT_SWIRL),
-    LAYER_COLOR(1, 120, 75, 65),
-    LAYER_COLOR(0, 220, 75, 65),
+    LAYER_COLOR(1, 0, 100, 65),
+    LAYER_COLOR(0, 230, 100, 65),
 };
 
 static void imprint_rgb_queue_action(struct zmk_behavior_binding_event *event, uint32_t param1,
