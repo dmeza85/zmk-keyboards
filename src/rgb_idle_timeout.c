@@ -30,6 +30,10 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 static uint32_t idle_timeout_ms = IMPRINT_RGB_IDLE_DEFAULT_MS;
 
+#if IS_ENABLED(CONFIG_SETTINGS)
+static void imprint_rgb_idle_save_debounced(void);
+#endif
+
 #if IS_CENTRAL
 
 static bool rgb_off_for_idle;
@@ -57,6 +61,10 @@ static void imprint_rgb_queue_cmd(uint32_t param1, uint32_t param2) {
 static void imprint_rgb_idle_off_handler(struct k_work *work) {
     rgb_off_for_idle = true;
     imprint_rgb_queue_cmd(RGB_OFF_CMD, 0);
+
+#if IS_ENABLED(CONFIG_SETTINGS)
+    imprint_rgb_idle_save_debounced();
+#endif
 }
 
 static void imprint_rgb_idle_ensure_ready(void) {
@@ -74,6 +82,10 @@ static void imprint_rgb_idle_rearm(void) {
     if (rgb_off_for_idle) {
         rgb_off_for_idle = false;
         imprint_rgb_queue_cmd(RGB_ON_CMD, 0);
+
+#if IS_ENABLED(CONFIG_SETTINGS)
+        imprint_rgb_idle_save_debounced();
+#endif
     }
 
     k_work_reschedule(&idle_off_work, K_MSEC(idle_timeout_ms));
@@ -123,6 +135,17 @@ static int imprint_rgb_idle_settings_set(const char *name, size_t len, settings_
         return 0;
     }
 
+#if IS_CENTRAL
+    if (settings_name_steq(name, "off", &next) && !next) {
+        if (len != sizeof(rgb_off_for_idle)) {
+            return -EINVAL;
+        }
+
+        int rc = read_cb(cb_arg, &rgb_off_for_idle, sizeof(rgb_off_for_idle));
+        return rc < 0 ? rc : 0;
+    }
+#endif
+
     return -ENOENT;
 }
 
@@ -131,6 +154,9 @@ SETTINGS_STATIC_HANDLER_DEFINE(imprint_rgb_idle, "imprint/rgb_idle", NULL,
 
 static void imprint_rgb_idle_save_work_handler(struct k_work *work) {
     settings_save_one("imprint/rgb_idle/ms", &idle_timeout_ms, sizeof(idle_timeout_ms));
+#if IS_CENTRAL
+    settings_save_one("imprint/rgb_idle/off", &rgb_off_for_idle, sizeof(rgb_off_for_idle));
+#endif
 }
 
 static struct k_work_delayable idle_save_work;
