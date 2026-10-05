@@ -718,12 +718,12 @@
 
         layer_System {
             bindings = <
-&sys_reset   &rgb_idle_timeout RGB_IDLE_TIMEOUT_INC_CMD  &rgb_idle_timeout RGB_IDLE_TIMEOUT_DEC_CMD  &none  &none  &none    &none  &none  &none  &none  &none  &sys_reset
-&tog 7       &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &tog 7
+&sys_reset   &rgb_idle_timeout RGB_IDLE_TIMEOUT_INC_CMD  &rgb_idle_timeout RGB_IDLE_TIMEOUT_DEC_CMD  &none  &none  &none    &none  &none  &none  &rgb_idle_timeout RGB_IDLE_TIMEOUT_DEC_CMD  &rgb_idle_timeout RGB_IDLE_TIMEOUT_INC_CMD  &sys_reset
+&tog 7       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_CLR                 &bt BT_CLR       &bt BT_SEL 3     &bt BT_SEL 2     &bt BT_SEL 1     &bt BT_SEL 0     &tog 7
 &none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF            &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &none
 &none        &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR            &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_SPD  &none
-&none        &kp K_APP        &kp PSCRN        &kp PAUSE_BREAK  &rgb_ug RGB_TOG  &kp C_SLEEP                &sysrq           &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_CLR
-&bootloader  &none            &none            &kp F12          &kp DELETE                                                   &trans           &kp SLCK         &kp CAPS         &kp KP_NUMLOCK   &bootloader
+&sysrq       &kp K_APP        &kp PSCRN        &kp PAUSE_BREAK  &rgb_ug RGB_TOG  &kp C_SLEEP                &kp C_SLEEP      &rgb_ug RGB_TOG  &kp PAUSE_BREAK  &kp PSCRN        &kp K_APP        &sysrq
+&bootloader  &kp KP_NUMLOCK   &kp CAPS         &kp SLCK         &kp DELETE                                                   &kp DELETE       &kp SLCK         &kp CAPS         &kp KP_NUMLOCK   &bootloader
                                                                 &trans           &trans           &trans    &trans           &trans           &trans
                                                                 &trans           &trans           &tog 11    &tog 11           &trans           &trans
             >;
