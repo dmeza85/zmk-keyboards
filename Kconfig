@@ -5,3 +5,13 @@ config IMPRINT_RGB_LAYER_COLORS
     help
       Sets the underglow color to a distinct value based on the highest
       currently active keymap layer.
+
+config ZMK_STUDIO_UNLOCK_COMBO
+    bool "Keymap-independent unlock key combo"
+    default y
+    depends on ZMK_STUDIO_LOCKING
+    help
+      Unlock ZMK Studio by holding a fixed set of physical keys (defined
+      in devicetree by matrix row/column, see boards/shields/imprint/imprint.dtsi)
+      for a configured duration, without requiring a &studio_unlock binding
+      in the keymap.
