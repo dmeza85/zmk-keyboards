@@ -422,7 +422,7 @@
             require-prior-idle-ms = <150>;
             key-positions = <59 68>;
             bindings = <&tog 7>;
-            layers = <0 1 2 7>;
+            layers = <0 1 7>;
         };
 
         combo_sticky_shift_left {
@@ -558,7 +558,7 @@
             require-prior-idle-ms = <150>;
             key-positions = <70 71 72>;
             bindings = <&to 0>;
-            layers = <1 2 3 4 5 6 7 8 9 10 11>;
+            layers = <1 3 4 5 6 7 8 9 10 11>;
         };
 
         combo_base_reset_right {
@@ -566,7 +566,7 @@
             require-prior-idle-ms = <150>;
             key-positions = <75 74 73>;
             bindings = <&to 0>;
-            layers = <1 2 3 4 5 6 7 8 9 10 11>;
+            layers = <1 3 4 5 6 7 8 9 10 11>;
         };
     };
 
